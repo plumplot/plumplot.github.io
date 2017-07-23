@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Liverpool crime rates and house prices in 3D map</title>
+<meta name="description" content="Visualizes crime rate compared to national avg. rate, house prices, population density by postcode district in 3D map. Shows the last 2 years.">
+<meta name="og:title" content="Liverpool crime rates and house prices in 3D map">
+<meta name="og:description" content="Visualizes crime rate compared to national avg. rate, house prices, population density by postcode district in 3D map. Shows the last 2 years.">
+<meta name="og:type" content="website">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Plumplot">
+<meta property="og:image" content="//i.plumplot.co.uk/posts/liverpool-open-data-in-3D-map-og.png">
+<meta property="og:image:width"  content="600" />
+<meta property="og:image:height" content="315" />
+<link rel="stylesheet prefetch" href="https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.css">
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.js"></script>
+<style>
+.spacesm{padding-top:15px;}
+.spacem{padding-top:30px;}
+.space{padding-top:60px;}
+.bgray{background-color:#222;padding:10px;}
+a{color:#409940;text-decoration:none}a:focus,a:hover{color:#5cb85c;text-decoration:underline}a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
+#map{position:absolute;width:99%;bottom:0;top:0;}
+.legend {
+background-color:#222;color:#eee;border-radius:10px;
+text-align:left;top:5px;box-shadow:0 1px 2px rgba(0,0,0,0.10);
+font:15px/30px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+padding:0px 11px 11px 11px;position:absolute;left:5px;z-index:1;
+}
+.legend i{width:30px;height:30px;float:left;margin-right:6px;opacity:0.9;}
+/*!
+* Bootstrap v3.3.7 (http://getbootstrap.com)
+* Copyright 2011-2016 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+*//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}small{font-size:80%}button,input,optgroup,select{margin:0;font:inherit;color:inherit}button{overflow:visible}button,select{text-transform:none}button{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}optgroup{font-weight:700}/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}button,input,select{font-family:inherit;font-size:inherit;line-height:inherit}h3,h4{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h4 small{font-weight:400;line-height:1;color:#777}h3{margin-top:20px;margin-bottom:10px}h4{margin-top:10px;margin-bottom:10px}h4 small{font-size:75%}h3{font-size:24px}h4{font-size:18px}small{font-size:85%}.form-control{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.form-control:focus{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.form-control::-moz-placeholder{color:#999;opacity:1}.form-control:-ms-input-placeholder{color:#999}.form-control::-webkit-input-placeholder{color:#999}.form-control::-ms-expand{background-color:transparent;border:0}.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}.btn:active:focus,.btn:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.btn:focus,.btn:hover{color:#333;text-decoration:none}.btn:active{background-image:none;outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn-success{color:#fff;background-color:#5cb85c;border-color:#4cae4c}.btn-success:focus{color:#fff;background-color:#449d44;border-color:#255625}.btn-success:hover{color:#fff;background-color:#449d44;border-color:#398439}.btn-success:active{color:#fff;background-color:#449d44;border-color:#398439}.btn-success:active:focus,.btn-success:active:hover{color:#fff;background-color:#398439;border-color:#255625}.btn-success:active{background-image:none}@-ms-viewport{width:device-width}
+/*# sourceMappingURL=bootstrap.min.css.map */
+</style>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-86254916-1', 'auto');
+ga('send', 'pageview');
+"use strict";
+function getActiveOpts (opt) {
+var e = document.getElementById(opt + "_opt");
+var idx = e.selectedIndex < 0 ? 0 : e.selectedIndex;
+return e.options[idx].value;
+}
+function merge_data(opts) {
+var val = getActiveOpts('report');
+var map_id = GLOB.report[val].map_id;
+var url = GLOB.url + "map" + map_id + "?dim=" + GLOB.by_unit;
+if (opts.qstr.indexOf("pc=")>-1) {
+var england = opts.qstr.replace(/pc=[0-9]+/, "");
+var area_data = getData(url + "&" + opts.qstr);
+var area = {};
+for (var i = 0; i < area_data.length; i++) {
+area[area_data[i][0]] = 1;
+}
+var all_data = getData(url + "&" + england);
+for (var i = 0; i < all_data.length; i++) {
+if ( !(all_data[i][0] in area) ){
+all_data[i][2] = null;
+}
+}
+return all_data;
+} else {
+return getData(url + "&" + opts.qstr);
+}
+}
+function getData(url) {
+
+var request = new XMLHttpRequest();
+request.open("GET", url, false);
+request.send(null);
+return request.status === 200
+? JSON.parse(request.responseText)
+: [];
+}
+function getVals(data, transform) {
+var polygon = [];
+for ( var i in data ) {
+var id = data[i][0], value = data[i][2];
+if (!value || isNaN(value)) { continue; }
+var tvalue = transform(value);
+polygon.push([id, tvalue]);
+};
+return polygon;
+}
+function screenshot(div_id) {
+window.setTimeout(function () {
+var img = new Image();
+var mapCanvas = document.querySelector(".mapboxgl-canvas");
+img.src = mapCanvas.toDataURL();
+var img_div = document.getElementById("mapimg");
+img_div.appendChild(img);
+
+
+
+var elem = document.getElementById(div_id);
+elem.parentNode.removeChild(elem);
+document.body.style.backgroundColor = "black";
+}, 3000);
+}
+function showPopup(e,popup,map) {
+var features = map.queryRenderedFeatures(e.point, { layers: ['hprices16'] });
+
+map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+if (!features.length) {
+popup.remove();
+return;
+}
+var feature = features[0];
+
+var name = feature.properties.name;
+popup.setLngLat(e.lngLat).setHTML(getInfo(GLOB.map_id,name,GLOB.data[name])).addTo(map);
+}
+function addDataLayer(map, tileset) {
+var val    = getActiveOpts('report');
+var map_id = GLOB.report[val].map_id,
+ratio = GLOB.report[val].hratio;
+GLOB.map_id = map_id;
+resetData();
+var data = getData(GLOB.url + GLOB.report[val].q);
+var row;
+for (var i = 0; i < data.length; i++) {
+row = data[i];
+GLOB.data[row[0]] = row[2];
+}
+map.addLayer({
+"source-layer": tileset,
+source : tileset,
+id     : "hprices16",
+type   : "fill-extrusion",
+paint  : {
+
+"fill-extrusion-color":{
+property :"name",
+type     :"categorical",
+stops    :getVals(data, getLegendColor(map_id))
+},
+"fill-extrusion-height":{
+property :"name",
+type     :"categorical",
+stops    :getVals(
+data,
+function(v){
+var h=v*ratio;
+return h>65535 ? 65535 :h;
+}
+)
+},
+"fill-extrusion-opacity":0.8,
+}
+}, "waterway-label");
+document.getElementById("legend_div").innerHTML = getLegendHtml(map_id);
+}
+function changeDataLayer(filter) {
+GLOB.map.removeLayer('hprices16');
+addDataLayer(
+GLOB.map,
+GLOB.attrs[GLOB.by_unit].tileset
+);
+}
+function setMap(filter) {
+GLOB.map.easeTo({
+duration:1000,
+pitch:5,
+bearing:-5,
+center:[-2.9,53.45],
+easing:function(t) {
+return t * (2 - t);
+}
+});
+}
+function initData() {
+
+var data = getData( GLOB.url + 'avg.json' );
+for (var i = 0; i < data.length; i++) {
+GLOB.data[data[i][0]] = 0;
+}
+}
+function resetData() {
+for(var name in GLOB.data) {
+GLOB.data[name] = 0;
+}
+}
+function showMap(opts) {
+mapboxgl.accessToken = opts.t + 'yw';
+var map = new mapboxgl.Map({
+container:opts.div_id,
+
+
+
+
+
+
+
+
+style:"https://openmaptiles.github.io/positron-gl-style/style-cdn.json",
+center:[opts.lon, opts.lat],
+zoom:opts.zoom,
+pitch:opts.pitch,
+bearing:opts.bearing
+});
+initData();
+map.on("load", function () {
+var tileset = GLOB.attrs[GLOB.by_unit].tileset;
+var mapid = GLOB.attrs[GLOB.by_unit].mapid;
+map.addSource(tileset, { type:"vector", url:mapid });
+addDataLayer(map, tileset);
+});
+var popup = new mapboxgl.Popup({
+closeButton:false,
+closeOnClick:false
+});
+map.on('mousemove', function(e){ showPopup(e,popup,map)} );
+
+
+
+GLOB.map = map;
+}
+var GLOB = {
+url     :"/a/liverpool/",
+by_unit :'D',map_id  :6,data:{},attrs:
+{"A" :{
+"tileset" :"ewarea-18li89",
+"mapid"   :"mapbox://vlada111.45jtxq3k"
+},
+"D" :{
+"tileset" :"L-dist-arak30",
+"mapid"   :"mapbox://vlada111.4qu6t3f2"
+},
+"S" :{
+"tileset" :"L-sect-dah3vf",
+"mapid"   :"mapbox://vlada111.3jnj3pz4"
+}
+},
+report :{
+"ct1" :{ "map_id" :9, "hratio" :40,  "q":"ct1.json"},
+"ct2" :{ "map_id" :9, "hratio" :40,  "q":"ct2.json"},
+"ct3" :{ "map_id" :9, "hratio" :40,  "q":"ct3.json"},
+"ct4" :{ "map_id" :9, "hratio" :40,  "q":"ct4.json"},
+"ct5" :{ "map_id" :9, "hratio" :40,  "q":"ct5.json"},
+"ct6" :{ "map_id" :9, "hratio" :40,  "q":"ct6.json"},
+"ct7" :{ "map_id" :9, "hratio" :40,  "q":"ct7.json"},
+"ct8" :{ "map_id" :9, "hratio" :40,  "q":"ct8.json"},
+"ct10":{ "map_id" :9, "hratio" :40,  "q":"ct10.json"},
+"ct11":{ "map_id" :9, "hratio" :40,  "q":"ct11.json"},
+"ct12":{ "map_id" :9, "hratio" :40,  "q":"ct12.json"},
+"ct13":{ "map_id" :9, "hratio" :40,  "q":"ct13.json"},
+"ct14":{ "map_id" :9, "hratio" :40,  "q":"ct14.json"},
+"ct15":{ "map_id" :9, "hratio" :40,  "q":"ct15.json"},
+"priceavg"    :{ "map_id" :1, "hratio" :0.02,"q":"avg.json"},
+"pricechange" :{ "map_id" :2, "hratio" :20,  "q":"chan.json"},
+"volumes"     :{ "map_id" :3, "hratio" :5,   "q":"vol.json"},
+"density"     :{ "map_id" :6, "hratio" :1,   "q":"pop.json"},
+"rareas"      :{ "map_id" :7, "hratio" :30 , "q":"res.json"}
+}
+};
+window.onload = function() {
+showMap({
+"t"       :"pk.eyJ1IjoidmxhZGExMTEiLCJhIjoiY2l6Nm9lZnB3MDAwYTMybzdoY204cXlwZiJ9.R74NAyOyp-sLNd1VriaY",
+"div_id"  :"map",
+"lon"     :-2.9,
+"lat"     :53.45,
+"zoom"    :9,
+"pitch"   :19,
+"bearing" :-20
+});
+};
+var popupPrice,popupPpl;
+function mapColor9(p) {
+return p >= 150 ? "#d73027":
+p >= 120  ? "#f46d43":
+p >= 80  ? "#ffffb2":
+p >= 50  ? "#a6d96a":
+p >= 1   ? "#1a9850":
+"#999999";
+}
+function mapColor8(p) {
+return p >= 1000000 ? "#023858":
+p >= 500000 ? "#045a8d":
+p >= 250000 ? "#0570b0":
+p >= 100000 ? "#3690c0":
+p >= 20000  ? "#74a9cf":
+p >= 10000  ? "#a6bddb":
+p >= 5000   ? "#d0d1e6":
+p >= 2500   ? "#ece7f2":
+p >= 1      ? "#fff7fb":
+"#999999";
+}
+function mapColor7(p) {
+return p >= 180  ? "#006d2c":
+p >= 160 ? "#31a354":
+p >= 140 ? "#74c476":
+p >= 120 ? "#a1d99b":
+p >= 100 ? "#c7e9c0":
+p >= 80  ? "#fcc5c0":
+p >= 60  ? "#fa9fb5":
+p >= 40  ? "#f768a1":
+p >= 20  ? "#c51b8a":
+p >= 1   ? "#7a0177":
+"#999999";
+}
+function mapColor6(p) {
+return p >= 10000 ? "#49006a":
+p >= 5000  ? "#7a0177":
+p >= 2500  ? "#ae017e":
+p >= 1000  ? "#dd3497":
+p >= 500   ? "#f768a1":
+p >= 250   ? "#fa9fb5":
+p >= 100   ? "#fcc5c0":
+p >= 50    ? "#fde0dd":
+p >= 1     ? "#fff7f3":
+"#999999";
+}
+function mapColor5(p) {
+return  p >= 1000 ? "#4d004b":
+p >= 500 ? "#810f7c":
+p >= 200 ? "#88419d":
+p >= 100 ? "#8c6bb1":
+p >= 50  ? "#8c96c6":
+p >= 20  ? "#9ebcda":
+p >= 10  ? "#bfd3e6":
+p >= 5   ? "#e0ecf4":
+p > 0   ? "#f7fcfd":
+"#999999";
+}
+function mapColor4(p) {
+return p <= -50  ? "#a50026":
+p <= -25 ? "#d73027":
+p <= -10  ? "#f46d43":
+p <= -3  ? "#fdae61":
+p < 0   ? "#ffffbf":
+p >= 50  ? "#006837":
+p >= 25  ? "#1a9850":
+p >= 10   ? "#66bd63":
+p >= 3   ? "#a6d96a":
+p > 0   ? "#ffffbf":
+"#999999";
+}
+function mapColor3(p) {
+return p >= 5000 ?  "#662506":
+p >= 1000 ? "#993404":
+p >= 500  ? "#cc4c02":
+p >= 250  ? "#ec7014":
+p >= 100  ? "#fe9929":
+p >= 50   ? "#fec44f":
+p >= 25   ? "#fee391":
+p >= 10   ? "#fff7bc":
+p >= 1    ? "#ffffe5":
+"#999999";
+}
+function mapColor2(p) {
+return p <= -20  ? "#a50026":
+p <= -10 ? "#d73027":
+p <= -5  ? "#f46d43":
+p <= -2  ? "#fdae61":
+p >= 20  ? "#006837":
+p >= 10  ? "#1a9850":
+p >= 5   ? "#66bd63":
+p >= 2   ? "#a6d96a":
+"#ffffbf";
+}
+function mapColor1(p) {
+return p >= 1000000 ? "#520018":
+p >= 750000  ? "#800026":
+p >= 500000  ? "#BD0026":
+p >= 400000  ? "#E31A1C":
+p >= 300000  ? "#FC4E2A":
+p >= 200000  ? "#FD8D3C":
+p >= 150000  ? "#FEB24C":
+p >= 75000   ? "#FED976":
+p >= 1       ? "#FFEDA0":
+"#999999";
+}
+function mapColor0(p) {
+return '#999999';
+}
+function ifnl(val) {
+return isNaN(parseInt(val)) ? 1 :0;
+}
+function info0(val) {
+return ['', ''];
+}
+function info1(val) {
+return [ifnl(val) ? '-' :'£' + format(val),  'average price'];
+}
+function info2(val) {
+return [ifnl(val) ? '-' :Math.round(val*10)/10 + '%', 'price changed'];
+}
+function info3(val) {
+return [ifnl(val) ? '-' :val.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, '$1,'), 'properties sold'];
+}
+function info4(val) {
+return [ifnl(val) ? '-' :Math.round(val*10)/10 + '%', 'change in transactions'];
+}
+function info5(val) {
+return [Math.round(val), 'commited crimes per<br/>1000 workday people'];
+}
+function info6(val) {
+return [ifnl(val) ? '-' :Math.round(val).toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, '$1,'), 'residents/km<sup>2</sup>'];
+}
+function info7(val) {
+return [Math.round(val), 'residents on 100 wd ppl.'];
+}
+function info8(val) {
+return [ifnl(val) ? '-' :val.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, '$1,'), 'residents'];
+}
+function info9(val) {
+return [Math.round(val) +'%', 'of nat\'l avg. crime rate'];
+}
+var mapDisp = {
+0 :[['Postcodes'], [], '', '', mapColor0, info0, popupPrice],
+1 :[['Average<br/>property<br/>price'], [1000000, 750000, 500000, 400000, 300000, 200000, 150000, 75000, 1],'£', '', mapColor1, info1, popupPrice],
+2 :[['Average price <br/>% change'], [20, 10, 5, 2, 0, -2, -5, -10, -20], '', '%', mapColor2, info2, popupPrice],
+3 :[['Total sold<br/>properties'], [5000, 1000, 500, 250, 100, 50, 25, 10, 1], '', '', mapColor3, info3, popupPrice],
+4 :[[' % change in<br/>transactions'], [50, 25, 10, 3, 0, -3,  -10, -25, -50], '', '%', mapColor4, info4, popupPrice],
+5 :[['No. of crimes /<br>1000 wd people'], [1000, 500, 200, 100, 50, 20, 10, 5, 0], '', '', mapColor5, info5, popupPpl],
+6 :[['Residents/km<sup>2</sup>'], [10000, 5000, 2500, 1000, 500, 250, 100, 50, 1], '', '', mapColor6, info6, popupPpl],
+7 :[['No. of residents /<br/>100 wd people'], [180, 160, 140, 120, 100, 80, 60, 40, 20, 1], '', '', mapColor7, info7, popupPpl],
+8 :[['Total residents'], [1000000, 500000, 250000, 100000, 20000, 10000, 5000, 2500, 1], '', '', mapColor8, info8, popupPpl],
+9 :[['National<br>crime rate<br>comparison'], [150, 120, 80, 50, 1], '', '%', mapColor9, info9, popupPpl]
+};
+function getLegendColor(idx) {
+return mapDisp[idx][4];
+}
+function getLegendHtml(idx) {
+
+var	labels = [],bound,
+lunit = mapDisp[idx][2],
+runit = mapDisp[idx][3],
+mapCol = mapDisp[idx][4],
+to = mapDisp[idx][1].length,
+plus = mapDisp[idx][1][to-1] >= 0 ? '+' :'';
+for (var i = 0; i < to; i++) {
+bound=mapDisp[idx][1][i];
+labels.push(
+'<i style="background:' + mapCol(bound == 0 ? 1 :bound) + '"></i> ' + lunit
++ bound.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, '$1,') + runit + plus
+);
+}
+if ( mapDisp[idx][1][to-1] >= 0 ) {
+labels.push('<i style="background:#999999"></i> no data');
+}
+return '<h3>' + mapDisp[idx][0]+ '</h3>' + labels.join('<br>');
+}
+function getInfo(idx,name,val) {
+var func = mapDisp[idx][5];
+var content = '<br>No data/<br>no crime.';
+if ( val ) {
+var cont = func(val);
+content = '<h2><b>' + cont[0] + '</b></h2>' + cont[1];
+}
+return '<div style="text-align:center;">' + name + content;
+}
+function format(T) {
+var val = T; var unit = '';
+if ( Math.abs(val) > 1000000000 ) {
+val = Math.round(val/100000000)/10;
+unit = 'B'
+}
+else if ( Math.abs(val) > 1000000 ) {
+val = Math.round(val/100000)/10;
+unit = 'M'
+}
+else if ( Math.abs(val) > 1000 ) {
+val = Math.round(val/100)/10;
+unit = 'k'
+} else {
+val = Math.round(val);
+}
+if ( val > 100 ) {
+val = Math.round(val);
+}
+return val+unit;
+}
+</script>
+</head>
+<body>
+<div id="map" class="mapboxgl-map"></div>
+<div class="legend">
+<a href="/"><h3 style="text-align:left;">&nbsp;<span style="color:#7CB342;">&#x25C9;&nbsp;plumplot</span>&nbsp;</h3></a>
+<button style="background-color:gray; color:white;" onclick="setMap()">Liverpool pcd area<br><small>in the last 2 years</small></button>
+<br>
+<select id="report_opt" onchange="changeDataLayer(this.value);" style="color:white; background:gray;">
+<optgroup label="Crime">
+<option value="ct1">anti-social behav.</option>
+<option value="ct2">bicycle theft</option>
+<option value="ct3">burglary</option>
+<option value="ct4">c. damage, arson</option>
+<option value="ct5">drugs</option>
+<option value="ct6">other crime</option>
+<option value="ct7">other theft</option>
+<option value="ct8">poss. of weapons</option>
+<option value="ct10">public order</option>
+<option value="ct11">robbery</option>
+<option value="ct12">shoplifting</option>
+<option value="ct13">theft from a pers.</option>
+<option value="ct14">vehicle crime</option>
+<option value="ct15">violent crime</option>
+</optgroup>
+<optgroup label="Houses">
+<option value="priceavg" selected>avg. price</option>
+<option value="volumes">volumes</option>
+</optgroup>
+<optgroup label="Population">
+<option value="density">population density</option>
+<option value="rareas">residential areas</option>
+</optgroup>
+</select>
+<div id="legend_div"></div>
+</div>
+<div style="position:absolute; left:72px; bottom:50px; width:900px; color:#444;"><small>
+© 2017 <a href="http://www.plumplot.co.uk">plumplot.co.uk</a>
+. Data sources:<a href="https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads">Price Paid Data</a>
+, <a href="https://data.police.uk/data/">UK police data</a>
+, <a href="http://www.nomisweb.co.uk/census/2011">UK Census 2011</a>
+.
+<br>Contains public sector information licensed under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3">Open Government Licence v3.0.</a>,
+<br>National Statistics data © Crown copyright and database right 2012,<br>Ordnance Survey data © Crown copyright and database right 2012,<br>Postal Boundaries © GeoLytix copyright and database right 2012,<br>Royal Mail data © Royal Mail copyright and database right 2012
+.
+</small></div>
+</body>
+</html>
