@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>England and Wales facts in maps and graphs</title>
+<meta name="description" content="Visualisation of crime stats, house prices, population stats, average salary, unemployment rates, car crashes and supermarkets.">
+<meta name="og:title" content="England and Wales facts in maps and graphs">
+<meta name="og:description" content="Visualisation of crime stats, house prices, population stats, average salary, unemployment rates, car crashes and supermarkets.">
+<meta name="og:type" content="website">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Plumplot">
+<meta property="og:image" content="http://i.plumplot.co.uk/plumplot.png">
+<meta property="og:image:width"  content="1200" />
+<meta property="og:image:height" content="630" />
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" async defer></script>
+
+
+
+
+
+
+
+
+<style>
+.spacesm{padding-top:15px;}
+.spacem{padding-top:30px;}
+.space{padding-top:60px;}
+.mh1{ font-size: 190%; }
+.mh2{ font-size: 150%; }
+.r0 { color: #e6f5d0; }
+.r1 { color: #c51b7d; }
+.r2 { color: #de77ae; }
+.r3 { color: #f1b6da; }
+.r4 { color: #fee090; }
+.r5 { color: #b8e186; }
+.r6 { color: #7fbc41; }
+.r7 { color: #4d9221; }
+.r0bg { background-color: #e6f5d0; }
+.r1bg { background-color: #c51b7d; }
+.r2bg { background-color: #de77ae; }
+.r3bg { background-color: #f1b6da; }
+.r4bg { background-color: #fee090; }
+.r5bg { background-color: #b8e186; }
+.r6bg { background-color: #7fbc41; }
+.r7bg { background-color: #4d9221; }
+.pr1 { color: #FFEDA0; }
+.pr2 { color: #FED976; }
+.pr3 { color: #FEB24C; }
+.pr4 { color: #FD8D3C; }
+.pr5 { color: #FC4E2A; }
+.pr6 { color: #E31A1C; }
+.pr7 { color: #BD0026; }
+.pr8 { color: #800026; }
+.pr9 { color: #520018; }
+.bgray{background-color:#222;padding:10px;}
+table.borderless td,table.borderless th{ border: none !important;}
+.nogap{ padding: 0 !important; margin: 0 !important; }
+a{color:#409940;text-decoration:none}a:focus,a:hover{color:#5cb85c;text-decoration:underline}a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
+.chosen-container {
+position: relative;
+display: inline-block;
+vertical-align: middle;
+font-size: 13px;
+zoom: 1;
+*display: inline;
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+}
+.chosen-container * {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.chosen-container .chosen-drop {
+position: absolute;
+top: 100%;
+left: -9999px;
+z-index: 1010;
+width: 100%;
+border: 1px solid #aaa;
+border-top: 0;
+background: #fff;
+box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+left: 0;
+}
+.chosen-container a {
+cursor: pointer;
+}
+.chosen-container .search-choice .group-name, .chosen-container .chosen-single .group-name {
+margin-right: 4px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+font-weight: normal;
+color: #999999;
+}
+.chosen-container .search-choice .group-name:after, .chosen-container .chosen-single .group-name:after {
+content: ":";
+padding-left: 2px;
+vertical-align: top;
+}
+
+/* @end */
+/* @group Single Chosen */
+.chosen-container-single .chosen-single {
+position: relative;
+display: block;
+overflow: hidden;
+padding: 0 0 0 8px;
+height: 25px;
+border: 1px solid #aaa;
+border-radius: 5px;
+background-color: #fff;
+background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+background: -webkit-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+background: -moz-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+background: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+background-clip: padding-box;
+box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+color: #444;
+text-decoration: none;
+white-space: nowrap;
+line-height: 24px;
+}
+.chosen-container-single .chosen-default {
+color: #999;
+}
+.chosen-container-single .chosen-single span {
+display: block;
+overflow: hidden;
+margin-right: 26px;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.chosen-container-single .chosen-single-with-deselect span {
+margin-right: 38px;
+}
+.chosen-container-single .chosen-single abbr {
+position: absolute;
+top: 6px;
+right: 26px;
+display: block;
+width: 12px;
+height: 12px;
+background: url('chosen-sprite.png') -42px 1px no-repeat;
+font-size: 1px;
+}
+.chosen-container-single .chosen-single abbr:hover {
+background-position: -42px -10px;
+}
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+background-position: -42px -10px;
+}
+.chosen-container-single .chosen-single div {
+position: absolute;
+top: 0;
+right: 0;
+display: block;
+width: 18px;
+height: 100%;
+}
+.chosen-container-single .chosen-single div b {
+display: block;
+width: 100%;
+height: 100%;
+background: url('chosen-sprite.png') no-repeat 0px 2px;
+}
+.chosen-container-single .chosen-search {
+position: relative;
+z-index: 1010;
+margin: 0;
+padding: 3px 4px;
+white-space: nowrap;
+}
+.chosen-container-single .chosen-search input[type="text"] {
+margin: 1px 0;
+padding: 4px 20px 4px 5px;
+width: 100%;
+height: auto;
+outline: 0;
+border: 1px solid #aaa;
+background: white url('chosen-sprite.png') no-repeat 100% -20px;
+background: url('chosen-sprite.png') no-repeat 100% -20px;
+font-size: 1em;
+font-family: sans-serif;
+line-height: normal;
+border-radius: 0;
+}
+.chosen-container-single .chosen-drop {
+margin-top: -1px;
+border-radius: 0 0 4px 4px;
+background-clip: padding-box;
+}
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+position: absolute;
+left: -9999px;
+}
+
+/* @end */
+/* @group Results */
+.chosen-container .chosen-results {
+color: #444;
+position: relative;
+overflow-x: hidden;
+overflow-y: auto;
+margin: 0 4px 4px 0;
+padding: 0 0 0 4px;
+max-height: 240px;
+-webkit-overflow-scrolling: touch;
+}
+.chosen-container .chosen-results li {
+display: none;
+margin: 0;
+padding: 5px 6px;
+list-style: none;
+line-height: 15px;
+word-wrap: break-word;
+-webkit-touch-callout: none;
+}
+.chosen-container .chosen-results li.active-result {
+display: list-item;
+cursor: pointer;
+}
+.chosen-container .chosen-results li.disabled-result {
+display: list-item;
+color: #ccc;
+cursor: default;
+}
+.chosen-container .chosen-results li.highlighted {
+background-color: #3875d7;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+color: #fff;
+}
+.chosen-container .chosen-results li.no-results {
+color: #777;
+display: list-item;
+background: #f4f4f4;
+}
+.chosen-container .chosen-results li.group-result {
+display: list-item;
+font-weight: bold;
+cursor: default;
+}
+.chosen-container .chosen-results li.group-option {
+padding-left: 15px;
+}
+.chosen-container .chosen-results li em {
+font-style: normal;
+text-decoration: underline;
+}
+
+/* @end */
+/* @group Multi Chosen */
+.chosen-container-multi .chosen-choices {
+position: relative;
+overflow: hidden;
+margin: 0;
+padding: 0 5px;
+width: 100%;
+height: auto !important;
+height: 1%;
+border: 1px solid #aaa;
+background-color: #fff;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+background-image: -webkit-linear-gradient(#eeeeee 1%, #ffffff 15%);
+background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
+background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
+background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);
+cursor: text;
+}
+.chosen-container-multi .chosen-choices li {
+float: left;
+list-style: none;
+}
+.chosen-container-multi .chosen-choices li.search-field {
+margin: 0;
+padding: 0;
+white-space: nowrap;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+margin: 1px 0;
+padding: 0;
+height: 25px;
+outline: 0;
+border: 0 !important;
+background: transparent !important;
+box-shadow: none;
+color: #999;
+font-size: 100%;
+font-family: sans-serif;
+line-height: normal;
+border-radius: 0;
+}
+.chosen-container-multi .chosen-choices li.search-choice {
+position: relative;
+margin: 3px 5px 3px 0;
+padding: 3px 20px 3px 5px;
+border: 1px solid #aaa;
+max-width: 100%;
+border-radius: 3px;
+background-color: #eeeeee;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+background-size: 100% 19px;
+background-repeat: repeat-x;
+background-clip: padding-box;
+box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+color: #333;
+line-height: 13px;
+cursor: default;
+}
+.chosen-container-multi .chosen-choices li.search-choice span {
+word-wrap: break-word;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+position: absolute;
+top: 4px;
+right: 3px;
+display: block;
+width: 12px;
+height: 12px;
+background: url('chosen-sprite.png') -42px 1px no-repeat;
+font-size: 1px;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+background-position: -42px -10px;
+}
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+padding-right: 5px;
+border: 1px solid #ccc;
+background-color: #e4e4e4;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+color: #666;
+}
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+background: #d4d4d4;
+}
+.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
+background-position: -42px -10px;
+}
+.chosen-container-multi .chosen-results {
+margin: 0;
+padding: 0;
+}
+.chosen-container-multi .chosen-drop .result-selected {
+display: list-item;
+color: #ccc;
+cursor: default;
+}
+
+/* @end */
+/* @group Active  */
+.chosen-container-active .chosen-single {
+border: 1px solid #5897fb;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.chosen-container-active.chosen-with-drop .chosen-single {
+border: 1px solid #aaa;
+-moz-border-radius-bottomright: 0;
+border-bottom-right-radius: 0;
+-moz-border-radius-bottomleft: 0;
+border-bottom-left-radius: 0;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+background-image: -webkit-linear-gradient(#eeeeee 20%, #ffffff 80%);
+background-image: -moz-linear-gradient(#eeeeee 20%, #ffffff 80%);
+background-image: -o-linear-gradient(#eeeeee 20%, #ffffff 80%);
+background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
+box-shadow: 0 1px 0 #fff inset;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div {
+border-left: none;
+background: transparent;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+background-position: -18px 2px;
+}
+.chosen-container-active .chosen-choices {
+border: 1px solid #5897fb;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
+color: #222 !important;
+}
+
+/* @end */
+/* @group Disabled Support */
+.chosen-disabled {
+opacity: 0.5 !important;
+cursor: default;
+}
+.chosen-disabled .chosen-single {
+cursor: default;
+}
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+cursor: default;
+}
+
+/* @end */
+/* @group Right to Left */
+.chosen-rtl {
+text-align: right;
+}
+.chosen-rtl .chosen-single {
+overflow: visible;
+padding: 0 8px 0 0;
+}
+.chosen-rtl .chosen-single span {
+margin-right: 0;
+margin-left: 26px;
+direction: rtl;
+}
+.chosen-rtl .chosen-single-with-deselect span {
+margin-left: 38px;
+}
+.chosen-rtl .chosen-single div {
+right: auto;
+left: 3px;
+}
+.chosen-rtl .chosen-single abbr {
+right: auto;
+left: 26px;
+}
+.chosen-rtl .chosen-choices li {
+float: right;
+}
+.chosen-rtl .chosen-choices li.search-field input[type="text"] {
+direction: rtl;
+}
+.chosen-rtl .chosen-choices li.search-choice {
+margin: 3px 5px 3px 0;
+padding: 3px 5px 3px 19px;
+}
+.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
+right: auto;
+left: 4px;
+}
+.chosen-rtl.chosen-container-single-nosearch .chosen-search,
+.chosen-rtl .chosen-drop {
+left: 9999px;
+}
+.chosen-rtl.chosen-container-single .chosen-results {
+margin: 0 0 4px 4px;
+padding: 0 4px 0 0;
+}
+.chosen-rtl .chosen-results li.group-option {
+padding-right: 15px;
+padding-left: 0;
+}
+.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+border-right: none;
+}
+.chosen-rtl .chosen-search input[type="text"] {
+padding: 4px 5px 4px 20px;
+background: white url('chosen-sprite.png') no-repeat -30px -20px;
+background: url('chosen-sprite.png') no-repeat -30px -20px;
+direction: rtl;
+}
+.chosen-rtl.chosen-container-single .chosen-single div b {
+background-position: 6px 2px;
+}
+.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
+background-position: -12px 2px;
+}
+
+/* @end */
+/* @group Retina compatibility */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+.chosen-rtl .chosen-search input[type="text"],
+.chosen-container-single .chosen-single abbr,
+.chosen-container-single .chosen-single div b,
+.chosen-container-single .chosen-search input[type="text"],
+.chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+.chosen-container .chosen-results-scroll-down span,
+.chosen-container .chosen-results-scroll-up span {
+background-image: url('chosen-sprite@2x.png') !important;
+background-size: 52px 37px !important;
+background-repeat: no-repeat !important;
+}
+}
+/* @end */
+.svg{width:20vh;fill:currentColor;vertical-align:bottom;}
+
+</style>
+
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-86254916-1','auto');
+ga('set','anonymizeIp',true);
+ga('send','pageview');
+
+(function() {
+var $, AbstractChosen, Chosen, SelectParser, _ref,
+__hasProp = {}.hasOwnProperty,
+__extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+SelectParser = (function() {
+function SelectParser() {
+this.options_index = 0;
+this.parsed = [];
+}
+
+SelectParser.prototype.add_node = function(child) {
+if (child.nodeName.toUpperCase() === "OPTGROUP") {
+return this.add_group(child);
+} else {
+return this.add_option(child);
+}
+};
+
+SelectParser.prototype.add_group = function(group) {
+var group_position, option, _i, _len, _ref, _results;
+group_position = this.parsed.length;
+this.parsed.push({
+array_index: group_position,
+group: true,
+label: this.escapeExpression(group.label),
+title: group.title ? group.title : void 0,
+children: 0,
+disabled: group.disabled,
+classes: group.className
+});
+_ref = group.childNodes;
+_results = [];
+for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+option = _ref[_i];
+_results.push(this.add_option(option, group_position, group.disabled));
+}
+return _results;
+};
+
+SelectParser.prototype.add_option = function(option, group_position, group_disabled) {
+if (option.nodeName.toUpperCase() === "OPTION") {
+if (option.text !== "") {
+if (group_position != null) {
+this.parsed[group_position].children += 1;
+}
+this.parsed.push({
+array_index: this.parsed.length,
+options_index: this.options_index,
+value: option.value,
+text: option.text,
+html: option.innerHTML,
+title: option.title ? option.title : void 0,
+selected: option.selected,
+disabled: group_disabled === true ? group_disabled : option.disabled,
+group_array_index: group_position,
+group_label: group_position != null ? this.parsed[group_position].label : null,
+classes: option.className,
+style: option.style.cssText
+});
+} else {
+this.parsed.push({
+array_index: this.parsed.length,
+options_index: this.options_index,
+empty: true
+});
+}
+return this.options_index += 1;
+}
+};
+
+SelectParser.prototype.escapeExpression = function(text) {
+var map, unsafe_chars;
+if ((text == null) || text === false) {
+return "";
+}
+if (!/[\&\<\>\"\'\`]/.test(text)) {
+return text;
+}
+map = {
+"<": "&lt;",
+">": "&gt;",
+'"': "&quot;",
+"'": "&#x27;",
+"`": "&#x60;"
+};
+unsafe_chars = /&(?!\w+;)|[\<\>\"\'\`]/g;
+return text.replace(unsafe_chars, function(chr) {
+return map[chr] || "&amp;";
+});
+};
+
+return SelectParser;
+
+})();
+
+SelectParser.select_to_array = function(select) {
+var child, parser, _i, _len, _ref;
+parser = new SelectParser();
+_ref = select.childNodes;
+for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+child = _ref[_i];
+parser.add_node(child);
+}
+return parser.parsed;
+};
+
+AbstractChosen = (function() {
+function AbstractChosen(form_field, options) {
+this.form_field = form_field;
+this.options = options != null ? options : {};
+if (!AbstractChosen.browser_is_supported()) {
+return;
+}
+this.is_multiple = this.form_field.multiple;
+this.set_default_text();
+this.set_default_values();
+this.setup();
+this.set_up_html();
+this.register_observers();
+this.on_ready();
+}
+
+AbstractChosen.prototype.set_default_values = function() {
+var _this = this;
+this.click_test_action = function(evt) {
+return _this.test_active_click(evt);
+};
+this.activate_action = function(evt) {
+return _this.activate_field(evt);
+};
+this.active_field = false;
+this.mouse_on_container = false;
+this.results_showing = false;
+this.result_highlighted = null;
+this.allow_single_deselect = (this.options.allow_single_deselect != null) && (this.form_field.options[0] != null) && this.form_field.options[0].text === "" ? this.options.allow_single_deselect : false;
+this.disable_search_threshold = this.options.disable_search_threshold || 0;
+this.disable_search = this.options.disable_search || false;
+this.enable_split_word_search = this.options.enable_split_word_search != null ? this.options.enable_split_word_search : true;
+this.group_search = this.options.group_search != null ? this.options.group_search : true;
+this.search_contains = this.options.search_contains || false;
+this.single_backstroke_delete = this.options.single_backstroke_delete != null ? this.options.single_backstroke_delete : true;
+this.max_selected_options = this.options.max_selected_options || Infinity;
+this.inherit_select_classes = this.options.inherit_select_classes || false;
+this.display_selected_options = this.options.display_selected_options != null ? this.options.display_selected_options : true;
+this.display_disabled_options = this.options.display_disabled_options != null ? this.options.display_disabled_options : true;
+return this.include_group_label_in_selected = this.options.include_group_label_in_selected || false;
+};
+
+AbstractChosen.prototype.set_default_text = function() {
+if (this.form_field.getAttribute("data-placeholder")) {
+this.default_text = this.form_field.getAttribute("data-placeholder");
+} else if (this.is_multiple) {
+this.default_text = this.options.placeholder_text_multiple || this.options.placeholder_text || AbstractChosen.default_multiple_text;
+} else {
+this.default_text = this.options.placeholder_text_single || this.options.placeholder_text || AbstractChosen.default_single_text;
+}
+return this.results_none_found = this.form_field.getAttribute("data-no_results_text") || this.options.no_results_text || AbstractChosen.default_no_result_text;
+};
+
+AbstractChosen.prototype.choice_label = function(item) {
+if (this.include_group_label_in_selected && (item.group_label != null)) {
+return "<b class='group-name'>" + item.group_label + "</b>" + item.html;
+} else {
+return item.html;
+}
+};
+
+AbstractChosen.prototype.mouse_enter = function() {
+return this.mouse_on_container = true;
+};
+
+AbstractChosen.prototype.mouse_leave = function() {
+return this.mouse_on_container = false;
+};
+
+AbstractChosen.prototype.input_focus = function(evt) {
+var _this = this;
+if (this.is_multiple) {
+if (!this.active_field) {
+return setTimeout((function() {
+return _this.container_mousedown();
+}), 50);
+}
+} else {
+if (!this.active_field) {
+return this.activate_field();
+}
+}
+};
+
+AbstractChosen.prototype.input_blur = function(evt) {
+var _this = this;
+if (!this.mouse_on_container) {
+this.active_field = false;
+return setTimeout((function() {
+return _this.blur_test();
+}), 100);
+}
+};
+
+AbstractChosen.prototype.results_option_build = function(options) {
+var content, data, _i, _len, _ref;
+content = '';
+_ref = this.results_data;
+for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+data = _ref[_i];
+if (data.group) {
+content += this.result_add_group(data);
+} else {
+content += this.result_add_option(data);
+}
+if (options != null ? options.first : void 0) {
+if (data.selected && this.is_multiple) {
+this.choice_build(data);
+} else if (data.selected && !this.is_multiple) {
+this.single_set_selected_text(this.choice_label(data));
+}
+}
+}
+return content;
+};
+
+AbstractChosen.prototype.result_add_option = function(option) {
+var classes, option_el;
+if (!option.search_match) {
+return '';
+}
+if (!this.include_option_in_results(option)) {
+return '';
+}
+classes = [];
+if (!option.disabled && !(option.selected && this.is_multiple)) {
+classes.push("active-result");
+}
+if (option.disabled && !(option.selected && this.is_multiple)) {
+classes.push("disabled-result");
+}
+if (option.selected) {
+classes.push("result-selected");
+}
+if (option.group_array_index != null) {
+classes.push("group-option");
+}
+if (option.classes !== "") {
+classes.push(option.classes);
+}
+option_el = document.createElement("li");
+option_el.className = classes.join(" ");
+option_el.style.cssText = option.style;
+option_el.setAttribute("data-option-array-index", option.array_index);
+option_el.innerHTML = option.search_text;
+if (option.title) {
+option_el.title = option.title;
+}
+return this.outerHTML(option_el);
+};
+
+AbstractChosen.prototype.result_add_group = function(group) {
+var classes, group_el;
+if (!(group.search_match || group.group_match)) {
+return '';
+}
+if (!(group.active_options > 0)) {
+return '';
+}
+classes = [];
+classes.push("group-result");
+if (group.classes) {
+classes.push(group.classes);
+}
+group_el = document.createElement("li");
+group_el.className = classes.join(" ");
+group_el.innerHTML = group.search_text;
+if (group.title) {
+group_el.title = group.title;
+}
+return this.outerHTML(group_el);
+};
+
+AbstractChosen.prototype.results_update_field = function() {
+this.set_default_text();
+if (!this.is_multiple) {
+this.results_reset_cleanup();
+}
+this.result_clear_highlight();
+this.results_build();
+if (this.results_showing) {
+return this.winnow_results();
+}
+};
+
+AbstractChosen.prototype.reset_single_select_options = function() {
+var result, _i, _len, _ref, _results;
+_ref = this.results_data;
+_results = [];
+for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+result = _ref[_i];
+if (result.selected) {
+_results.push(result.selected = false);
+} else {
+_results.push(void 0);
+}
+}
+return _results;
+};
+
+AbstractChosen.prototype.results_toggle = function() {
+if (this.results_showing) {
+return this.results_hide();
+} else {
+return this.results_show();
+}
+};
+
+AbstractChosen.prototype.results_search = function(evt) {
+if (this.results_showing) {
+return this.winnow_results();
+} else {
+return this.results_show();
+}
+};
+
+AbstractChosen.prototype.winnow_results = function() {
+var escapedSearchText, option, regex, results, results_group, searchText, startpos, text, zregex, _i, _len, _ref;
+this.no_results_clear();
+results = 0;
+searchText = this.get_search_text();
+escapedSearchText = searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+zregex = new RegExp(escapedSearchText, 'i');
+regex = this.get_search_regex(escapedSearchText);
+_ref = this.results_data;
+for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+option = _ref[_i];
+option.search_match = false;
+results_group = null;
+if (this.include_option_in_results(option)) {
+if (option.group) {
+option.group_match = false;
+option.active_options = 0;
+}
+if ((option.group_array_index != null) && this.results_data[option.group_array_index]) {
+results_group = this.results_data[option.group_array_index];
+if (results_group.active_options === 0 && results_group.search_match) {
+results += 1;
+}
+results_group.active_options += 1;
+}
+option.search_text = option.group ? option.label : option.html;
+if (!(option.group && !this.group_search)) {
+option.search_match = this.search_string_match(option.search_text, regex);
+if (option.search_match && !option.group) {
+results += 1;
+}
+if (option.search_match) {
+if (searchText.length) {
+startpos = option.search_text.search(zregex);
+text = option.search_text.substr(0, startpos + searchText.length) + '</em>' + option.search_text.substr(startpos + searchText.length);
+option.search_text = text.substr(0, startpos) + '<em>' + text.substr(startpos);
+}
+if (results_group != null) {
+results_group.group_match = true;
+}
+} else if ((option.group_array_index != null) && this.results_data[option.group_array_index].search_match) {
+option.search_match = true;
+}
+}
+}
+}
+this.result_clear_highlight();
+if (results < 1 && searchText.length) {
+this.update_results_content("");
+return this.no_results(searchText);
+} else {
+this.update_results_content(this.results_option_build());
+return this.winnow_results_set_highlight();
+}
+};
+
+AbstractChosen.prototype.get_search_regex = function(escaped_search_string) {
+var regex_anchor;
+regex_anchor = this.search_contains ? "" : "^";
+return new RegExp(regex_anchor + escaped_search_string, 'i');
+};
+
+AbstractChosen.prototype.search_string_match = function(search_string, regex) {
+var part, parts, _i, _len;
+if (regex.test(search_string)) {
+return true;
+} else if (this.enable_split_word_search && (search_string.indexOf(" ") >= 0 || search_string.indexOf("[") === 0)) {
+parts = search_string.replace(/\[|\]/g, "").split(" ");
+if (parts.length) {
+for (_i = 0, _len = parts.length; _i < _len; _i++) {
+part = parts[_i];
+if (regex.test(part)) {
+return true;
+}
+}
+}
+}
+};
+
+AbstractChosen.prototype.choices_count = function() {
+var option, _i, _len, _ref;
+if (this.selected_option_count != null) {
+return this.selected_option_count;
+}
+this.selected_option_count = 0;
+_ref = this.form_field.options;
+for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+option = _ref[_i];
+if (option.selected) {
+this.selected_option_count += 1;
+}
+}
+return this.selected_option_count;
+};
+
+AbstractChosen.prototype.choices_click = function(evt) {
+evt.preventDefault();
+if (!(this.results_showing || this.is_disabled)) {
+return this.results_show();
+}
+};
+
+AbstractChosen.prototype.keyup_checker = function(evt) {
+var stroke, _ref;
+stroke = (_ref = evt.which) != null ? _ref : evt.keyCode;
+this.search_field_scale();
+switch (stroke) {
+case 8:
+if (this.is_multiple && this.backstroke_length < 1 && this.choices_count() > 0) {
+return this.keydown_backstroke();
+} else if (!this.pending_backstroke) {
+this.result_clear_highlight();
+return this.results_search();
+}
+break;
+case 13:
+evt.preventDefault();
+if (this.results_showing) {
+return this.result_select(evt);
+}
+break;
+case 27:
+if (this.results_showing) {
+this.results_hide();
+}
+return true;
+case 9:
+case 38:
+case 40:
+case 16:
+case 91:
+case 17:
+break;
+default:
+return this.results_search();
+}
+};
+
+AbstractChosen.prototype.clipboard_event_checker = function(evt) {
+var _this = this;
+return setTimeout((function() {
+return _this.results_search();
+}), 50);
+};
+
+AbstractChosen.prototype.container_width = function() {
+if (this.options.width != null) {
+return this.options.width;
+} else {
+return "" + this.form_field.offsetWidth + "px";
+}
+};
+
+AbstractChosen.prototype.include_option_in_results = function(option) {
+if (this.is_multiple && (!this.display_selected_options && option.selected)) {
+return false;
+}
+if (!this.display_disabled_options && option.disabled) {
+return false;
+}
+if (option.empty) {
+return false;
+}
+return true;
+};
+
+AbstractChosen.prototype.search_results_touchstart = function(evt) {
+this.touch_started = true;
+return this.search_results_mouseover(evt);
+};
+
+AbstractChosen.prototype.search_results_touchmove = function(evt) {
+this.touch_started = false;
+return this.search_results_mouseout(evt);
+};
+
+AbstractChosen.prototype.search_results_touchend = function(evt) {
+if (this.touch_started) {
+return this.search_results_mouseup(evt);
+}
+};
+
+AbstractChosen.prototype.outerHTML = function(element) {
+var tmp;
+if (element.outerHTML) {
+return element.outerHTML;
+}
+tmp = document.createElement("div");
+tmp.appendChild(element);
+return tmp.innerHTML;
+};
+
+AbstractChosen.browser_is_supported = function() {
+if (window.navigator.appName === "Microsoft Internet Explorer") {
+return document.documentMode >= 8;
+}
+if (/iP(od|hone)/i.test(window.navigator.userAgent)) {
+return false;
+}
+if (/Android/i.test(window.navigator.userAgent)) {
+if (/Mobile/i.test(window.navigator.userAgent)) {
+return false;
+}
+}
+return true;
+};
+
+AbstractChosen.default_multiple_text = "Select Some Options";
+
+AbstractChosen.default_single_text = "Select an Option";
+
+AbstractChosen.default_no_result_text = "No results match";
+
+return AbstractChosen;
+
+})();
+
+$ = jQuery;
+
+$.fn.extend({
+chosen: function(options) {
+if (!AbstractChosen.browser_is_supported()) {
+return this;
+}
+return this.each(function(input_field) {
+var $this, chosen;
+$this = $(this);
+chosen = $this.data('chosen');
+if (options === 'destroy' && chosen instanceof Chosen) {
+chosen.destroy();
+} else if (!(chosen instanceof Chosen)) {
+$this.data('chosen', new Chosen(this, options));
+}
+});
+}
+});
+
+Chosen = (function(_super) {
+__extends(Chosen, _super);
+
+function Chosen() {
+_ref = Chosen.__super__.constructor.apply(this, arguments);
+return _ref;
+}
+
+Chosen.prototype.setup = function() {
+this.form_field_jq = $(this.form_field);
+this.current_selectedIndex = this.form_field.selectedIndex;
+return this.is_rtl = this.form_field_jq.hasClass("chosen-rtl");
+};
+
+Chosen.prototype.set_up_html = function() {
+var container_classes, container_props;
+container_classes = ["chosen-container"];
+container_classes.push("chosen-container-" + (this.is_multiple ? "multi" : "single"));
+if (this.inherit_select_classes && this.form_field.className) {
+container_classes.push(this.form_field.className);
+}
+if (this.is_rtl) {
+container_classes.push("chosen-rtl");
+}
+container_props = {
+'class': container_classes.join(' '),
+'style': "width: " + (this.container_width()) + ";",
+'title': this.form_field.title
+};
+if (this.form_field.id.length) {
+container_props.id = this.form_field.id.replace(/[^\w]/g, '_') + "_chosen";
+}
+this.container = $("<div />", container_props);
+if (this.is_multiple) {
+this.container.html('<ul class="chosen-choices"><li class="search-field"><input type="text" value="' + this.default_text + '" class="default" autocomplete="off" style="width:25px;" /></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div>');
+} else {
+this.container.html('<a class="chosen-single chosen-default" tabindex="-1"><span>' + this.default_text + '</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" /></div><ul class="chosen-results"></ul></div>');
+}
+this.form_field_jq.hide().after(this.container);
+this.dropdown = this.container.find('div.chosen-drop').first();
+this.search_field = this.container.find('input').first();
+this.search_results = this.container.find('ul.chosen-results').first();
+this.search_field_scale();
+this.search_no_results = this.container.find('li.no-results').first();
+if (this.is_multiple) {
+this.search_choices = this.container.find('ul.chosen-choices').first();
+this.search_container = this.container.find('li.search-field').first();
+} else {
+this.search_container = this.container.find('div.chosen-search').first();
+this.selected_item = this.container.find('.chosen-single').first();
+}
+this.results_build();
+this.set_tab_index();
+return this.set_label_behavior();
+};
+
+Chosen.prototype.on_ready = function() {
+return this.form_field_jq.trigger("chosen:ready", {
+chosen: this
+});
+};
+
+Chosen.prototype.register_observers = function() {
+var _this = this;
+this.container.bind('touchstart.chosen', function(evt) {
+_this.container_mousedown(evt);
+return evt.preventDefault();
+});
+this.container.bind('touchend.chosen', function(evt) {
+_this.container_mouseup(evt);
+return evt.preventDefault();
+});
+this.container.bind('mousedown.chosen', function(evt) {
+_this.container_mousedown(evt);
+});
+this.container.bind('mouseup.chosen', function(evt) {
+_this.container_mouseup(evt);
+});
+this.container.bind('mouseenter.chosen', function(evt) {
+_this.mouse_enter(evt);
+});
+this.container.bind('mouseleave.chosen', function(evt) {
+_this.mouse_leave(evt);
+});
+this.search_results.bind('mouseup.chosen', function(evt) {
+_this.search_results_mouseup(evt);
+});
+this.search_results.bind('mouseover.chosen', function(evt) {
+_this.search_results_mouseover(evt);
+});
+this.search_results.bind('mouseout.chosen', function(evt) {
+_this.search_results_mouseout(evt);
+});
+this.search_results.bind('mousewheel.chosen DOMMouseScroll.chosen', function(evt) {
+_this.search_results_mousewheel(evt);
+});
+this.search_results.bind('touchstart.chosen', function(evt) {
+_this.search_results_touchstart(evt);
+});
+this.search_results.bind('touchmove.chosen', function(evt) {
+_this.search_results_touchmove(evt);
+});
+this.search_results.bind('touchend.chosen', function(evt) {
+_this.search_results_touchend(evt);
+});
+this.form_field_jq.bind("chosen:updated.chosen", function(evt) {
+_this.results_update_field(evt);
+});
+this.form_field_jq.bind("chosen:activate.chosen", function(evt) {
+_this.activate_field(evt);
+});
+this.form_field_jq.bind("chosen:open.chosen", function(evt) {
+_this.container_mousedown(evt);
+});
+this.form_field_jq.bind("chosen:close.chosen", function(evt) {
+_this.input_blur(evt);
+});
+this.search_field.bind('blur.chosen', function(evt) {
+_this.input_blur(evt);
+});
+this.search_field.bind('keyup.chosen', function(evt) {
+_this.keyup_checker(evt);
+});
+this.search_field.bind('keydown.chosen', function(evt) {
+_this.keydown_checker(evt);
+});
+this.search_field.bind('focus.chosen', function(evt) {
+_this.input_focus(evt);
+});
+this.search_field.bind('cut.chosen', function(evt) {
+_this.clipboard_event_checker(evt);
+});
+this.search_field.bind('paste.chosen', function(evt) {
+_this.clipboard_event_checker(evt);
+});
+if (this.is_multiple) {
+return this.search_choices.bind('click.chosen', function(evt) {
+_this.choices_click(evt);
+});
+} else {
+return this.container.bind('click.chosen', function(evt) {
+evt.preventDefault();
+});
+}
+};
+
+Chosen.prototype.destroy = function() {
+$(this.container[0].ownerDocument).unbind("click.chosen", this.click_test_action);
+if (this.search_field[0].tabIndex) {
+this.form_field_jq[0].tabIndex = this.search_field[0].tabIndex;
+}
+this.container.remove();
+this.form_field_jq.removeData('chosen');
+return this.form_field_jq.show();
+};
+
+Chosen.prototype.search_field_disabled = function() {
+this.is_disabled = this.form_field_jq[0].disabled;
+if (this.is_disabled) {
+this.container.addClass('chosen-disabled');
+this.search_field[0].disabled = true;
+if (!this.is_multiple) {
+this.selected_item.unbind("focus.chosen", this.activate_action);
+}
+return this.close_field();
+} else {
+this.container.removeClass('chosen-disabled');
+this.search_field[0].disabled = false;
+if (!this.is_multiple) {
+return this.selected_item.bind("focus.chosen", this.activate_action);
+}
+}
+};
+
+Chosen.prototype.container_mousedown = function(evt) {
+if (!this.is_disabled) {
+if (evt && evt.type === "mousedown" && !this.results_showing) {
+evt.preventDefault();
+}
+if (!((evt != null) && ($(evt.target)).hasClass("search-choice-close"))) {
+if (!this.active_field) {
+if (this.is_multiple) {
+this.search_field.val("");
+}
+$(this.container[0].ownerDocument).bind('click.chosen', this.click_test_action);
+this.results_show();
+} else if (!this.is_multiple && evt && (($(evt.target)[0] === this.selected_item[0]) || $(evt.target).parents("a.chosen-single").length)) {
+evt.preventDefault();
+this.results_toggle();
+}
+return this.activate_field();
+}
+}
+};
+
+Chosen.prototype.container_mouseup = function(evt) {
+if (evt.target.nodeName === "ABBR" && !this.is_disabled) {
+return this.results_reset(evt);
+}
+};
+
+Chosen.prototype.search_results_mousewheel = function(evt) {
+var delta;
+if (evt.originalEvent) {
+delta = evt.originalEvent.deltaY || -evt.originalEvent.wheelDelta || evt.originalEvent.detail;
+}
+if (delta != null) {
+evt.preventDefault();
+if (evt.type === 'DOMMouseScroll') {
+delta = delta * 40;
+}
+return this.search_results.scrollTop(delta + this.search_results.scrollTop());
+}
+};
+
+Chosen.prototype.blur_test = function(evt) {
+if (!this.active_field && this.container.hasClass("chosen-container-active")) {
+return this.close_field();
+}
+};
+
+Chosen.prototype.close_field = function() {
+$(this.container[0].ownerDocument).unbind("click.chosen", this.click_test_action);
+this.active_field = false;
+this.results_hide();
+this.container.removeClass("chosen-container-active");
+this.clear_backstroke();
+this.show_search_field_default();
+return this.search_field_scale();
+};
+
+Chosen.prototype.activate_field = function() {
+this.container.addClass("chosen-container-active");
+this.active_field = true;
+this.search_field.val(this.search_field.val());
+return this.search_field.focus();
+};
+
+Chosen.prototype.test_active_click = function(evt) {
+var active_container;
+active_container = $(evt.target).closest('.chosen-container');
+if (active_container.length && this.container[0] === active_container[0]) {
+return this.active_field = true;
+} else {
+return this.close_field();
+}
+};
+
+Chosen.prototype.results_build = function() {
+this.parsing = true;
+this.selected_option_count = null;
+this.results_data = SelectParser.select_to_array(this.form_field);
+if (this.is_multiple) {
+this.search_choices.find("li.search-choice").remove();
+} else if (!this.is_multiple) {
+this.single_set_selected_text();
+if (this.disable_search || this.form_field.options.length <= this.disable_search_threshold) {
+this.search_field[0].readOnly = true;
+this.container.addClass("chosen-container-single-nosearch");
+} else {
+this.search_field[0].readOnly = false;
+this.container.removeClass("chosen-container-single-nosearch");
+}
+}
+this.update_results_content(this.results_option_build({
+first: true
+}));
+this.search_field_disabled();
+this.show_search_field_default();
+this.search_field_scale();
+return this.parsing = false;
+};
+
+Chosen.prototype.result_do_highlight = function(el) {
+var high_bottom, high_top, maxHeight, visible_bottom, visible_top;
+if (el.length) {
+this.result_clear_highlight();
+this.result_highlight = el;
+this.result_highlight.addClass("highlighted");
+maxHeight = parseInt(this.search_results.css("maxHeight"), 10);
+visible_top = this.search_results.scrollTop();
+visible_bottom = maxHeight + visible_top;
+high_top = this.result_highlight.position().top + this.search_results.scrollTop();
+high_bottom = high_top + this.result_highlight.outerHeight();
+if (high_bottom >= visible_bottom) {
+return this.search_results.scrollTop((high_bottom - maxHeight) > 0 ? high_bottom - maxHeight : 0);
+} else if (high_top < visible_top) {
+return this.search_results.scrollTop(high_top);
+}
+}
+};
+
+Chosen.prototype.result_clear_highlight = function() {
+if (this.result_highlight) {
+this.result_highlight.removeClass("highlighted");
+}
+return this.result_highlight = null;
+};
+
+Chosen.prototype.results_show = function() {
+if (this.is_multiple && this.max_selected_options <= this.choices_count()) {
+this.form_field_jq.trigger("chosen:maxselected", {
+chosen: this
+});
+return false;
+}
+this.container.addClass("chosen-with-drop");
+this.results_showing = true;
+this.search_field.focus();
+this.search_field.val(this.search_field.val());
+this.winnow_results();
+return this.form_field_jq.trigger("chosen:showing_dropdown", {
+chosen: this
+});
+};
+
+Chosen.prototype.update_results_content = function(content) {
+return this.search_results.html(content);
+};
+
+Chosen.prototype.results_hide = function() {
+if (this.results_showing) {
+this.result_clear_highlight();
+this.container.removeClass("chosen-with-drop");
+this.form_field_jq.trigger("chosen:hiding_dropdown", {
+chosen: this
+});
+}
+return this.results_showing = false;
+};
+
+Chosen.prototype.set_tab_index = function(el) {
+var ti;
+if (this.form_field.tabIndex) {
+ti = this.form_field.tabIndex;
+this.form_field.tabIndex = -1;
+return this.search_field[0].tabIndex = ti;
+}
+};
+
+Chosen.prototype.set_label_behavior = function() {
+var _this = this;
+this.form_field_label = this.form_field_jq.parents("label");
+if (!this.form_field_label.length && this.form_field.id.length) {
+this.form_field_label = $("label[for='" + this.form_field.id + "']");
+}
+if (this.form_field_label.length > 0) {
+return this.form_field_label.bind('click.chosen', function(evt) {
+if (_this.is_multiple) {
+return _this.container_mousedown(evt);
+} else {
+return _this.activate_field();
+}
+});
+}
+};
+
+Chosen.prototype.show_search_field_default = function() {
+if (this.is_multiple && this.choices_count() < 1 && !this.active_field) {
+this.search_field.val(this.default_text);
+return this.search_field.addClass("default");
+} else {
+this.search_field.val("");
+return this.search_field.removeClass("default");
+}
+};
+
+Chosen.prototype.search_results_mouseup = function(evt) {
+var target;
+target = $(evt.target).hasClass("active-result") ? $(evt.target) : $(evt.target).parents(".active-result").first();
+if (target.length) {
+this.result_highlight = target;
+this.result_select(evt);
+return this.search_field.focus();
+}
+};
+
+Chosen.prototype.search_results_mouseover = function(evt) {
+var target;
+target = $(evt.target).hasClass("active-result") ? $(evt.target) : $(evt.target).parents(".active-result").first();
+if (target) {
+return this.result_do_highlight(target);
+}
+};
+
+Chosen.prototype.search_results_mouseout = function(evt) {
+if ($(evt.target).hasClass("active-result" || $(evt.target).parents('.active-result').first())) {
+return this.result_clear_highlight();
+}
+};
+
+Chosen.prototype.choice_build = function(item) {
+var choice, close_link,
+_this = this;
+choice = $('<li />', {
+"class": "search-choice"
+}).html("<span>" + (this.choice_label(item)) + "</span>");
+if (item.disabled) {
+choice.addClass('search-choice-disabled');
+} else {
+close_link = $('<a />', {
+"class": 'search-choice-close',
+'data-option-array-index': item.array_index
+});
+close_link.bind('click.chosen', function(evt) {
+return _this.choice_destroy_link_click(evt);
+});
+choice.append(close_link);
+}
+return this.search_container.before(choice);
+};
+
+Chosen.prototype.choice_destroy_link_click = function(evt) {
+evt.preventDefault();
+evt.stopPropagation();
+if (!this.is_disabled) {
+return this.choice_destroy($(evt.target));
+}
+};
+
+Chosen.prototype.choice_destroy = function(link) {
+if (this.result_deselect(link[0].getAttribute("data-option-array-index"))) {
+this.show_search_field_default();
+if (this.is_multiple && this.choices_count() > 0 && this.search_field.val().length < 1) {
+this.results_hide();
+}
+link.parents('li').first().remove();
+return this.search_field_scale();
+}
+};
+
+Chosen.prototype.results_reset = function() {
+this.reset_single_select_options();
+this.form_field.options[0].selected = true;
+this.single_set_selected_text();
+this.show_search_field_default();
+this.results_reset_cleanup();
+this.form_field_jq.trigger("change");
+if (this.active_field) {
+return this.results_hide();
+}
+};
+
+Chosen.prototype.results_reset_cleanup = function() {
+this.current_selectedIndex = this.form_field.selectedIndex;
+return this.selected_item.find("abbr").remove();
+};
+
+Chosen.prototype.result_select = function(evt) {
+var high, item;
+if (this.result_highlight) {
+high = this.result_highlight;
+this.result_clear_highlight();
+if (this.is_multiple && this.max_selected_options <= this.choices_count()) {
+this.form_field_jq.trigger("chosen:maxselected", {
+chosen: this
+});
+return false;
+}
+if (this.is_multiple) {
+high.removeClass("active-result");
+} else {
+this.reset_single_select_options();
+}
+high.addClass("result-selected");
+item = this.results_data[high[0].getAttribute("data-option-array-index")];
+item.selected = true;
+this.form_field.options[item.options_index].selected = true;
+this.selected_option_count = null;
+if (this.is_multiple) {
+this.choice_build(item);
+} else {
+this.single_set_selected_text(this.choice_label(item));
+}
+if (!((evt.metaKey || evt.ctrlKey) && this.is_multiple)) {
+this.results_hide();
+}
+this.search_field.val("");
+if (this.is_multiple || this.form_field.selectedIndex !== this.current_selectedIndex) {
+this.form_field_jq.trigger("change", {
+'selected': this.form_field.options[item.options_index].value
+});
+}
+this.current_selectedIndex = this.form_field.selectedIndex;
+evt.preventDefault();
+return this.search_field_scale();
+}
+};
+
+Chosen.prototype.single_set_selected_text = function(text) {
+if (text == null) {
+text = this.default_text;
+}
+if (text === this.default_text) {
+this.selected_item.addClass("chosen-default");
+} else {
+this.single_deselect_control_build();
+this.selected_item.removeClass("chosen-default");
+}
+return this.selected_item.find("span").html(text);
+};
+
+Chosen.prototype.result_deselect = function(pos) {
+var result_data;
+result_data = this.results_data[pos];
+if (!this.form_field.options[result_data.options_index].disabled) {
+result_data.selected = false;
+this.form_field.options[result_data.options_index].selected = false;
+this.selected_option_count = null;
+this.result_clear_highlight();
+if (this.results_showing) {
+this.winnow_results();
+}
+this.form_field_jq.trigger("change", {
+deselected: this.form_field.options[result_data.options_index].value
+});
+this.search_field_scale();
+return true;
+} else {
+return false;
+}
+};
+
+Chosen.prototype.single_deselect_control_build = function() {
+if (!this.allow_single_deselect) {
+return;
+}
+if (!this.selected_item.find("abbr").length) {
+this.selected_item.find("span").first().after("<abbr class=\"search-choice-close\"></abbr>");
+}
+return this.selected_item.addClass("chosen-single-with-deselect");
+};
+
+Chosen.prototype.get_search_text = function() {
+return $('<div/>').text($.trim(this.search_field.val())).html();
+};
+
+Chosen.prototype.winnow_results_set_highlight = function() {
+var do_high, selected_results;
+selected_results = !this.is_multiple ? this.search_results.find(".result-selected.active-result") : [];
+do_high = selected_results.length ? selected_results.first() : this.search_results.find(".active-result").first();
+if (do_high != null) {
+return this.result_do_highlight(do_high);
+}
+};
+
+Chosen.prototype.no_results = function(terms) {
+var no_results_html;
+no_results_html = $('<li class="no-results">' + this.results_none_found + ' "<span></span>"</li>');
+no_results_html.find("span").first().html(terms);
+this.search_results.append(no_results_html);
+return this.form_field_jq.trigger("chosen:no_results", {
+chosen: this
+});
+};
+
+Chosen.prototype.no_results_clear = function() {
+return this.search_results.find(".no-results").remove();
+};
+
+Chosen.prototype.keydown_arrow = function() {
+var next_sib;
+if (this.results_showing && this.result_highlight) {
+next_sib = this.result_highlight.nextAll("li.active-result").first();
+if (next_sib) {
+return this.result_do_highlight(next_sib);
+}
+} else {
+return this.results_show();
+}
+};
+
+Chosen.prototype.keyup_arrow = function() {
+var prev_sibs;
+if (!this.results_showing && !this.is_multiple) {
+return this.results_show();
+} else if (this.result_highlight) {
+prev_sibs = this.result_highlight.prevAll("li.active-result");
+if (prev_sibs.length) {
+return this.result_do_highlight(prev_sibs.first());
+} else {
+if (this.choices_count() > 0) {
+this.results_hide();
+}
+return this.result_clear_highlight();
+}
+}
+};
+
+Chosen.prototype.keydown_backstroke = function() {
+var next_available_destroy;
+if (this.pending_backstroke) {
+this.choice_destroy(this.pending_backstroke.find("a").first());
+return this.clear_backstroke();
+} else {
+next_available_destroy = this.search_container.siblings("li.search-choice").last();
+if (next_available_destroy.length && !next_available_destroy.hasClass("search-choice-disabled")) {
+this.pending_backstroke = next_available_destroy;
+if (this.single_backstroke_delete) {
+return this.keydown_backstroke();
+} else {
+return this.pending_backstroke.addClass("search-choice-focus");
+}
+}
+}
+};
+
+Chosen.prototype.clear_backstroke = function() {
+if (this.pending_backstroke) {
+this.pending_backstroke.removeClass("search-choice-focus");
+}
+return this.pending_backstroke = null;
+};
+
+Chosen.prototype.keydown_checker = function(evt) {
+var stroke, _ref1;
+stroke = (_ref1 = evt.which) != null ? _ref1 : evt.keyCode;
+this.search_field_scale();
+if (stroke !== 8 && this.pending_backstroke) {
+this.clear_backstroke();
+}
+switch (stroke) {
+case 8:
+this.backstroke_length = this.search_field.val().length;
+break;
+case 9:
+if (this.results_showing && !this.is_multiple) {
+this.result_select(evt);
+}
+this.mouse_on_container = false;
+break;
+case 13:
+if (this.results_showing) {
+evt.preventDefault();
+}
+break;
+case 32:
+if (this.disable_search) {
+evt.preventDefault();
+}
+break;
+case 38:
+evt.preventDefault();
+this.keyup_arrow();
+break;
+case 40:
+evt.preventDefault();
+this.keydown_arrow();
+break;
+}
+};
+
+Chosen.prototype.search_field_scale = function() {
+var div, f_width, h, style, style_block, styles, w, _i, _len;
+if (this.is_multiple) {
+h = 0;
+w = 0;
+style_block = "position:absolute; left: -1000px; top: -1000px; display:none;";
+styles = ['font-size', 'font-style', 'font-weight', 'font-family', 'line-height', 'text-transform', 'letter-spacing'];
+for (_i = 0, _len = styles.length; _i < _len; _i++) {
+style = styles[_i];
+style_block += style + ":" + this.search_field.css(style) + ";";
+}
+div = $('<div />', {
+'style': style_block
+});
+div.text(this.search_field.val());
+$('body').append(div);
+w = div.width() + 25;
+div.remove();
+f_width = this.container.outerWidth();
+if (w > f_width - 10) {
+w = f_width - 10;
+}
+return this.search_field.css({
+'width': w + 'px'
+});
+}
+};
+
+return Chosen;
+
+})(AbstractChosen);
+
+}).call(this);
+function page_redirect() {
+var e = document.getElementById('area');
+var label = e.options[e.selectedIndex].innerHTML;
+label = label.replace(/ /g, '-').substr(0,25);
+window.location = "http://www.plumplot.co.uk/"
++ label + '-' + document.getElementById('section').value.substr(0,48)
++ '.html';
+}
+$(document).ready(function(){
+$("select").chosen({allow_single_deselect:true});
+var input = document.getElementById("go_btn");
+input.addEventListener("click", page_redirect);
+});
+
+</script>
+
+
+</head>
+<body style="background-color: black; color: #ccc;">
+
+<div class="col-lg-2"><a href="/"><h3 style="text-align: left;">&nbsp;<span style="color: #7CB342;">&#x25C9;&nbsp;plumplot</span>&nbsp;</h3></a>
+</div>
+
+<div class="col-lg-offset-1 col-lg-10 text-center"><h2>Search the area &amp; the section</h2>
+<select data-placeholder="Search area" id="area" class="chzn-select text-left" tabindex="2">
+<optgroup label='Region'>
+<option>London</option>
+<option>East Midlands</option>
+<option>East of England</option>
+<option>North East</option>
+<option>North West</option>
+<option>South East</option>
+<option>South West</option>
+<option>West Midlands</option>
+<option>Yorkshire</option>
+<option>Wales</option>
+</optgroup>
+<optgroup label='County'>
+<option>Bedfordshire</option>
+<option>Berkshire</option>
+<option>Bristol county</option>
+<option>Buckinghamshire</option>
+<option>Cambridgeshire</option>
+<option>Cheshire</option>
+<option>Clwyd</option>
+<option>Cornwall</option>
+<option>Cumbria</option>
+<option>Derbyshire</option>
+<option>Devon</option>
+<option>Dorset</option>
+<option>Durham county</option>
+<option>Dyfed</option>
+<option>East Riding of Yorkshire</option>
+<option>East Sussex</option>
+<option>Essex</option>
+<option>Gloucestershire</option>
+<option>Greater Manchester</option>
+<option>Gwent</option>
+<option>Gwynedd</option>
+<option>Hampshire</option>
+<option>Herefordshire</option>
+<option>Hertfordshire</option>
+<option>Isle of Wight</option>
+<option>Kent</option>
+<option>Lancashire</option>
+<option>Leicestershire</option>
+<option>Lincolnshire</option>
+<option>Merseyside</option>
+<option>Mid Glamorgan</option>
+<option>Norfolk</option>
+<option>Northamptonshire</option>
+<option>Northumberland</option>
+<option>North Yorkshire</option>
+<option>Nottinghamshire</option>
+<option>Oxfordshire</option>
+<option>Powys</option>
+<option>Rutland</option>
+<option>Shropshire</option>
+<option>Somerset</option>
+<option>South Glamorgan</option>
+<option>South Yorkshire</option>
+<option>Staffordshire</option>
+<option>Suffolk</option>
+<option>Surrey</option>
+<option>Tyne and Wear</option>
+<option>Warwickshire</option>
+<option>West Glamorgan</option>
+<option>West Midlands county</option>
+<option>West Sussex</option>
+<option>West Yorkshire</option>
+<option>Wiltshire</option>
+<option>Worcestershire</option>
+</optgroup>
+<optgroup label='Postcode area'>
+<option>St Albans</option>
+<option>Birmingham</option>
+<option>Bath</option>
+<option>Blackburn</option>
+<option>Bradford</option>
+<option>Bournemouth</option>
+<option>Bolton</option>
+<option>Brighton</option>
+<option>Bromley</option>
+<option>Bristol</option>
+<option>Carlisle</option>
+<option>Cambridge</option>
+<option>Cardiff</option>
+<option>Chester</option>
+<option>Chelmsford</option>
+<option>Colchester</option>
+<option>Croydon</option>
+<option>Canterbury</option>
+<option>Coventry</option>
+<option>Crewe</option>
+<option>Dartford</option>
+<option>Derby</option>
+<option>Durham</option>
+<option>Darlington</option>
+<option>Doncaster</option>
+<option>Dorchester</option>
+<option>Dudley</option>
+<option>East London</option>
+<option>East Central London</option>
+<option>Enfield</option>
+<option>Exeter</option>
+<option>Blackpool</option>
+<option>Gloucester</option>
+<option>Guildford</option>
+<option>Harrow</option>
+<option>Huddersfield</option>
+<option>Harrogate</option>
+<option>Hemel Hempstead</option>
+<option>Hereford</option>
+<option>Hull</option>
+<option>Halifax</option>
+<option>Ilford</option>
+<option>Ipswich</option>
+<option>Kingston upon Thames</option>
+<option>Liverpool</option>
+<option>Lancaster</option>
+<option>Llandrindod Wells</option>
+<option>Leicester</option>
+<option>Llandudno</option>
+<option>Lincoln</option>
+<option>Leeds</option>
+<option>Luton</option>
+<option>Manchester</option>
+<option>Rochester</option>
+<option>Milton Keynes</option>
+<option>North London</option>
+<option>Newcastle upon Tyne</option>
+<option>Nottingham</option>
+<option>Northampton</option>
+<option>Newport</option>
+<option>Norwich</option>
+<option>North West London</option>
+<option>Oldham</option>
+<option>Oxford</option>
+<option>Peterborough</option>
+<option>Plymouth</option>
+<option>Portsmouth</option>
+<option>Preston</option>
+<option>Reading</option>
+<option>Redhill</option>
+<option>Romford</option>
+<option>Sheffield</option>
+<option>Swansea</option>
+<option>South East London</option>
+<option>Stevenage</option>
+<option>Stockport</option>
+<option>Slough</option>
+<option>Sutton</option>
+<option>Swindon</option>
+<option>Southampton</option>
+<option>Salisbury</option>
+<option>Sunderland</option>
+<option>Southend-on-Sea</option>
+<option>Stoke-on-Trent</option>
+<option>South West London</option>
+<option>Shrewsbury</option>
+<option>Taunton</option>
+<option>Telford</option>
+<option>Tonbridge</option>
+<option>Torquay</option>
+<option>Truro</option>
+<option>Cleveland</option>
+<option>Twickenham</option>
+<option>Southall</option>
+<option>West London</option>
+<option>Warrington</option>
+<option>Western Central London</option>
+<option>Watford</option>
+<option>Wakefield</option>
+<option>Wigan</option>
+<option>Worcester</option>
+<option>Walsall</option>
+<option>Wolverhampton</option>
+<option>York</option>
+</optgroup>
+</select>
+<select data-placeholder="Search section" id="section" class="chzn-select" tabindex="2" onchange="page_redirect()">
+<optgroup label='Real estate'>
+<option value='house-prices'>house prices</option>
+<option value='house-prices-per-square-metre'>house prices / m&sup2;</option>
+<option value='home-features'>home features</option>
+<option value='new-home-prices'>new home prices</option>
+<option value='property-transactions'>property transactions</option>
+</optgroup>
+<optgroup label='Crimes'>
+<option value='crime-stats'>crime summary</option>
+<option value='antisocial-behaviour-crime-statistics'>antisocial behaviour</option>
+<option value='bicycle-theft-crime-statistics'>bicycle theft</option>
+<option value='burglary-crime-statistics'>burglary</option>
+<option value='criminal-damage-and-arson-crime-statistics'>criminal damage and arson</option>
+<option value='drugs-crime-statistics'>drugs</option>
+<option value='other-crime-statistics'>other crime</option>
+<option value='other-theft-crime-statistics'>other theft</option>
+<option value='possession-of-weapons-crime-statistics'>possession of weapons</option>
+<option value='public-order-crime-statistics'>public order</option>
+<option value='robbery-crime-statistics'>robbery</option>
+<option value='shoplifting-crime-statistics'>shoplifting</option>
+<option value='theft-from-the-person-crime-statistics'>theft from the person</option>
+<option value='vehicle-crime-statistics'>vehicle crime</option>
+<option value='violent-crime-statistics'>violent crime</option>
+</optgroup>
+<optgroup label='People'>
+<option value='population'>population</option>
+<option value='population-changes'>population changes</option>
+<option value='salary-and-unemployment'>salary &amp; unemployment</option>
+</optgroup>
+<optgroup label='Energy'>
+<option value='flat-energy-certificates'>flat energy certificates</option>
+<option value='flat-energy-costs'>flat energy costs</option>
+<option value='house-energy-certificates'>house energy certificates</option>
+<option value='house-energy-costs'>house energy costs</option>
+</optgroup>
+</select>
+<button id="go_btn" type="button" class="btn btn-sm btn-success">Go &rarr;</button>
+</div>
+<div class="col-lg-offset-1 col-lg-10 text-center">
+<div class="col-md-4 space">
+<a href="https://a.plumplot.co.uk/"><svg viewBox="115 -60 680 680" class="svg"><path style="fill:#ffeda0" d="M 488.1 128.04 457.21 122.19 412.95 130.48 399.71 116.87 398.7 97.51 373.75 94.45 361.72 58.42 381.57 42.37 410.52 33.22 404.09 13.5 428.38 1 460.1 17.29 480.12 67.64 511.71 113.23 548.62 120.6 532.97 127.54 491.6 129.09 488.1 128.04 Z"/><path style="fill:#fed976" d="M 412.95 130.48 397.92 151.45 374.78 160.87 425.11 192.46 412.65 202.96 438.65 221.17 430.98 253.19 392.15 269.07 358.07 275.9 323.85 249.24 326.12 183.73 345.31 178.97 343.94 158.14 307.01 164.14 269.99 127.21 274.41 112.02 303.02 82.82 317.54 84.21 361.72 58.42 373.75 94.45 398.7 97.51 399.71 116.87 412.95 130.48 Z"/><path style="fill:#feb24c" d="M 558.06 206.75 513.97 240.67 469.26 243.56 438.65 221.17 412.65 202.96 425.11 192.46 374.78 160.87 397.92 151.45 412.95 130.48 457.21 122.19 488.1 128.04 491.6 129.09 532.97 127.54 548.62 120.6 568.8 127.51 609.96 166.21 611.59 185.36 598.6 201.08 558.06 206.75 Z"/><path style="fill:#fd8d3c" d="M 561.05 353.62 500 373.88 495.61 356.24 511.36 337.23 476.78 316.59 459.55 299.51 464.97 288.42 446.3 257.21 430.98 253.19 438.65 221.17 469.26 243.56 513.97 240.67 558.06 206.75 598.4 203.93 645.03 228.96 661.25 263.5 632.74 282.5 653.43 292.41 623.84 307.62 582.29 308.34 593.18 326.6 561.05 353.62 Z"/><path style="fill:#feb24c" d="M 495.61 356.24 462.69 374.08 452.64 361.75 365.61 389.99 331.21 380.39 317.74 359.25 329.9 345.32 308.39 330.4 327.84 323.17 330.08 297.72 321.68 281.12 358.07 275.9 392.15 269.07 430.98 253.19 446.3 257.21 464.97 288.42 459.55 299.51 476.78 316.59 511.36 337.23 495.61 356.24 Z"/><path style="fill:#fc4e2a" d="M 647.68 423.11 616.11 403.25 577.57 412.32 568.43 361.95 561.05 353.62 593.18 326.6 582.29 308.34 623.84 307.62 653.43 292.41 680.33 276.63 750.25 279.99 788.63 297.07 799 311.1 796.99 334.07 782.98 363.99 720.47 399.06 704.58 419.97 647.68 423.11 Z"/><path style="fill:#b10026" d="M 647.68 423.11 646.95 426.29 632.69 442.91 598.5 435.74 577.04 424.86 577.57 412.32 616.11 403.25 647.68 423.11 Z"/><path style="fill:#e31a1c" d="M 561.05 353.62 568.43 361.95 577.57 412.32 577.04 424.86 598.5 435.74 632.69 442.91 646.95 426.29 715.33 437.78 761.18 439.93 763.21 457.22 724 470.12 718.6 480.01 667.58 488.19 652.36 497.32 604.36 488.33 552.96 494.72 538.34 487.46 514.25 493.75 460.05 497.34 434.67 473.19 469.42 470.65 476.65 427.99 460.24 411.75 462.69 374.08 495.61 356.24 500 373.88 561.05 353.62 Z"/><path style="fill:#fc4e2a" d="M 462.69 374.08 460.24 411.75 476.65 427.99 469.42 470.65 434.67 473.19 460.05 497.34 433.72 511.76 387.74 507.41 340.01 497.69 304.82 504 282.55 516.2 260.45 549.76 202.17 534.41 159.62 536.98 124.72 557.61 82.31 557.6 118.6 535.75 132.44 516.39 154.07 511.06 177.06 493.03 180.58 469.58 202.13 471.93 210.91 452.7 255.25 448.01 303.88 453.73 363.43 417.64 363.72 398.22 365.61 389.99 452.64 361.75 462.69 374.08 Z"/><path style="fill:#fd8d3c" d="M 358.07 275.9 321.68 281.12 330.08 297.72 327.84 323.17 308.39 330.4 329.9 345.32 317.74 359.25 331.21 380.39 365.61 389.99 363.72 398.22 364.86 410.11 318.98 423.51 314.42 431.39 275.98 431.84 247.22 410.47 210.47 418.17 196.16 401.2 177.41 398.29 140.79 412.41 120.87 386.47 169.1 359.22 212.09 346.85 227.41 325.44 227.49 303.46 197.65 270.98 220.46 250.86 295.48 239.51 323.85 249.24 358.07 275.9 Z M 190.82 231.98 223.85 248.34 197.21 261.29 176.91 247.45 190.82 231.98 Z"/></svg>
+</a>
+<h3>Area insights<br>
+<small><i>interactive maps, charts<br>and ad-hoc analytics</i><br>
+<a href="insights/average-flat-prices.html"><b>Documentation</b></a></small>
+</h3>
+</div>
+<div class="col-md-4 space">
+<a href="house-prices.html"><svg class="svg" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1472 992v480q0 26-19 45t-45 19h-384v-384h-256v384h-384q-26 0-45-19t-19-45v-480q0-1 .5-3t.5-3l575-474 575 474q1 2 1 6zm223-69l-62 74q-8 9-21 11h-3q-13 0-21-7l-692-577-692 577q-12 8-24 7-13-2-21-11l-62-74q-8-10-7-23.5t11-21.5l719-599q32-26 76-26t76 26l244 204v-195q0-14 9-23t23-9h192q14 0 23 9t9 23v408l219 182q10 8 11 21.5t-7 23.5z"/><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><cc:license rdf:resource="http://fontawesome.io/license"/><dc:publisher><cc:Agent rdf:about="http://fontawesome.io/"><dc:title>Font Awesome 4.7.0 by @davegandy</dc:title></cc:Agent></dc:publisher></rdf:RDF></metadata></svg>
+</a>
+<h3>Housing market<br><small><i>report by <a href="house-prices-by-region.html">region</a>, <a href="house-prices-by-county.html">county</a>
+<br><a href="house-prices-by-city.html">city</a> or <a href="house-prices.html">postcode area</a>
+<br>August 2022 / publ. 30 September 2022
+</i></small>
+</h3>
+</div>
+<div class="col-md-4 space">
+<a href="population.html"><svg class="svg" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 1405q0 120-73 189.5t-194 69.5h-874q-121 0-194-69.5t-73-189.5q0-53 3.5-103.5t14-109 26.5-108.5 43-97.5 62-81 85.5-53.5 111.5-20q9 0 42 21.5t74.5 48 108 48 133.5 21.5 133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5t-271.5 112.5-271.5-112.5-112.5-271.5 112.5-271.5 271.5-112.5 271.5 112.5 112.5 271.5z"/><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><cc:license rdf:resource="http://fontawesome.io/license"/><dc:publisher><cc:Agent rdf:about="http://fontawesome.io/"><dc:title>Font Awesome 4.7.0 by @davegandy</dc:title></cc:Agent></dc:publisher></rdf:RDF></metadata></svg>
+</a>
+<h3>Population<br><small><i>report by <a href="population-by-region.html">region</a>, <a href="population-by-county.html">county</a>
+<br>and <a href="population.html">postcode area</a>
+<br>Estimates 2020 / publ. October 2021
+</i></small>
+</h3>
+</div>
+<div class="col-md-4 space"><a href="crime-stats.html"><svg class="svg" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M704 1536l96-448-96-128-128-64zm256 0l128-640-128 64-96 128zm160-1010q-2-4-4-6-10-8-96-8-70 0-167 19-7 2-21 2t-21-2q-97-19-167-19-86 0-96 8-2 2-4 6 2 18 4 27 2 3 7.5 6.5t7.5 10.5q2 4 7.5 20.5t7 20.5 7.5 17 8.5 17 9 14 12 13.5 14 9.5 17.5 8 20.5 4 24.5 2q36 0 59-12.5t32.5-30 14.5-34.5 11.5-29.5 17.5-12.5h12q11 0 17.5 12.5t11.5 29.5 14.5 34.5 32.5 30 59 12.5q13 0 24.5-2t20.5-4 17.5-8 14-9.5 12-13.5 9-14 8.5-17 7.5-17 7-20.5 7.5-20.5q2-7 7.5-10.5t7.5-6.5q2-9 4-27zm416 879q0 121-73 190t-194 69h-874q-121 0-194-69t-73-190q0-61 4.5-118t19-125.5 37.5-123.5 63.5-103.5 93.5-74.5l-90-220h214q-22-64-22-128 0-12 2-32-194-40-194-96 0-57 210-99 17-62 51.5-134t70.5-114q32-37 76-37 30 0 84 31t84 31 84-31 84-31q44 0 76 37 36 42 70.5 114t51.5 134q210 42 210 99 0 56-194 96 7 81-20 160h214l-82 225q63 33 107.5 96.5t65.5 143.5 29 151.5 8 148.5z"/><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><cc:license rdf:resource="http://fontawesome.io/license"/><dc:publisher><cc:Agent rdf:about="http://fontawesome.io/"><dc:title>Font Awesome 4.7.0 by @davegandy</dc:title></cc:Agent></dc:publisher></rdf:RDF></metadata></svg>
+</a>
+<h3>Crimes<br><small><i>report by <a href="crime-stats-by-region.html">region</a>, <a href="crime-stats-by-county.html">county</a>
+<br>and <a href="crime-stats.html">postcode area</a>
+<br>July 2022 / publ. 26 September 2022
+</i></small>
+</h3>
+</div>
+<div class="col-md-4 space">
+<a href="home-features.html"><svg class="svg" viewBox="-220 -330 2392 2392" xmlns="http://www.w3.org/2000/svg"><path d="M960 0l960 384v128h-128q0 26-20.5 45t-48.5 19h-1526q-28 0-48.5-19t-20.5-45h-128v-128zm-704 640h256v768h128v-768h256v768h128v-768h256v768h128v-768h256v768h59q28 0 48.5 19t20.5 45v64h-1664v-64q0-26 20.5-45t48.5-19h59v-768zm1595 960q28 0 48.5 19t20.5 45v128h-1920v-128q0-26 20.5-45t48.5-19h1782z"/><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><cc:license rdf:resource="http://fontawesome.io/license"/><dc:publisher><cc:Agent rdf:about="http://fontawesome.io/"><dc:title>Font Awesome 4.7.0 by @davegandy</dc:title></cc:Agent></dc:publisher></rdf:RDF></metadata></svg>
+</a>
+<h3>Home features<br><small><i>report by <a href="home-features-by-region.html">region</a>, <a href="home-features-by-county.html">county</a>
+<br>and <a href="home-features.html">postcode area</a>
+<br>2008 - 2019
+</i></small>
+</h3>
+</div>
+<div class="col-md-4 space">
+<a href="salary-and-unemployment.html"><svg class="svg" viewBox="0 0 2048 2092" xmlns="http://www.w3.org/2000/svg"><path d="M832 1152h384v-96h-128v-448h-114l-148 137 77 80q42-37 55-57h2v288h-128v96zm512-256q0 70-21 142t-59.5 134-101.5 101-138 39-138-39-101.5-101-59.5-134-21-142 21-142 59.5-134 101.5-101 138-39 138 39 101.5 101 59.5 134 21 142zm512 256v-512q-106 0-181-75t-75-181h-1152q0 106-75 181t-181 75v512q106 0 181 75t75 181h1152q0-106 75-181t181-75zm128-832v1152q0 26-19 45t-45 19h-1792q-26 0-45-19t-19-45v-1152q0-26 19-45t45-19h1792q26 0 45 19t19 45z"/></svg>
+</a>
+<h3>Income, unemployment<br>
+<small><i>report by <a href="salary-and-unemployment-by-county.html">county</a>
+<br>and <a href="salary-and-unemployment.html">postcode area</a>
+<br>Estimates 2016, 2019
+</i></small>
+</h3>
+</div>
+<div class="col-md-4 space">
+<a href="home-energy-certificates.html"><svg class="svg" viewBox="-220 -330 2392 2392" xmlns="http://www.w3.org/2000/svg"><path d="M1596 380q28 28 48 76t20 88v1152q0 40-28 68t-68 28h-1344q-40 0-68-28t-28-68v-1600q0-40 28-68t68-28h896q40 0 88 20t76 48zm-444-244v376h376q-10-29-22-41l-313-313q-12-12-41-22zm384 1528v-1024h-416q-40 0-68-28t-28-68v-416h-768v1536h1280zm-1024-864q0-14 9-23t23-9h704q14 0 23 9t9 23v64q0 14-9 23t-23 9h-704q-14 0-23-9t-9-23v-64zm736 224q14 0 23 9t9 23v64q0 14-9 23t-23 9h-704q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h704zm0 256q14 0 23 9t9 23v64q0 14-9 23t-23 9h-704q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h704z"/><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><cc:license rdf:resource="http://fontawesome.io/license"/><dc:publisher><cc:Agent rdf:about="http://fontawesome.io/"><dc:title>Font Awesome 4.7.0 by @davegandy</dc:title></cc:Agent></dc:publisher></rdf:RDF></metadata></svg>
+</a>
+<h3>Energy certificates<br><small><i>report by <a href="home-energy-certificates-by-region.html">region</a>, <a href="home-energy-certificates-by-county.html">county</a>
+<br>and <a href="home-energy-certificates.html">postcode area</a>
+<br>2008 - 2019
+</i></small>
+</h3>
+</div>
+<div class="col-md-4 space">
+<a href="home-energy-costs.html"><svg class="svg" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1404 1137v367q0 14-9 23t-23 9h-956q-14 0-23-9t-9-23v-150q0-13 9.5-22.5t22.5-9.5h97v-383h-95q-14 0-23-9.5t-9-22.5v-131q0-14 9-23t23-9h95v-223q0-171 123.5-282t314.5-111q185 0 335 125 9 8 10 20.5t-7 22.5l-103 127q-9 11-22 12-13 2-23-7-5-5-26-19t-69-32-93-18q-85 0-137 47t-52 123v215h305q13 0 22.5 9t9.5 23v131q0 13-9.5 22.5t-22.5 9.5h-305v379h414v-181q0-13 9-22.5t23-9.5h162q14 0 23 9.5t9 22.5z"/><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><cc:license rdf:resource="http://fontawesome.io/license"/><dc:publisher><cc:Agent rdf:about="http://fontawesome.io/"><dc:title>Font Awesome 4.7.0 by @davegandy</dc:title></cc:Agent></dc:publisher></rdf:RDF></metadata></svg>
+</a>
+<h3>Energy costs<br><small><i>report by <a href="home-energy-costs-by-region.html">region</a>, <a href="home-energy-costs-by-county.html">county</a>
+<br>and <a href="home-energy-costs.html">postcode area</a>
+<br>2008 - 2019
+</i></small>
+</h3>
+</div>
+<div class="col-md-4 space">
+<a href="posts.html"><svg class="svg" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1591 1448q56 89 21.5 152.5t-140.5 63.5h-1152q-106 0-140.5-63.5t21.5-152.5l503-793v-399h-64q-26 0-45-19t-19-45 19-45 45-19h512q26 0 45 19t19 45-19 45-45 19h-64v399zm-779-725l-272 429h712l-272-429-20-31v-436h-128v436z"/><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><cc:license rdf:resource="http://fontawesome.io/license"/><dc:publisher><cc:Agent rdf:about="http://fontawesome.io/"><dc:title>Font Awesome 4.7.0 by @davegandy</dc:title></cc:Agent></dc:publisher></rdf:RDF></metadata></svg>
+</a>
+</a>
+<h3>Blog &amp; Goodies<br><small><i><a href="posts.html">most recent posts</a>,
+<br><a href="goodies.html">all posts</a>,
+<br>2016 - 2019
+</i></small>
+</h3>
+</div>
+</div>
+<div class="col-lg-offset-1 col-lg-10 text-center spacem"><h3>
+<small>Contact: <span style="unicode-bidi: bidi-override; direction: rtl;">ku &#46; oc &#46; tolpmulp &commat; ksa</span>
+</small></h3>
+<small>&copy; 2022 plumplot s.r.o.</small>
+</div>
+
+<div class="col-lg-offset-1 col-lg-10 text-center">
+<div class="col-lg-offset-3 col-lg-6">
+<h3><small>
+Our website use Google analytics cookie which provide us with anonymous statistics on how many people visit the site and where they have come from and the pages they visit.
+You can <a href="http://tools.google.com/dlpage/gaoptout">opt out</a>.
+</small></h3><br><br>
+</div>
+</div>
+<div class="col-lg-12 space"></div>
+
+</body>
+</html>
