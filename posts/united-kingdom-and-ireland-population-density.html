@@ -36,19 +36,17 @@ footer{padding:32px 0 20px}
 <div class="wrap">
 <div class="header">
 <h1>United Kingdom and Ireland Population Density</h1>
-<p class="subtitle">Over the past 50 years (1975-2025), the UK's population rose 24% from 56.2M to 69.5M (0.43% CAGR), whereas the Republic of Ireland grew 72% from 3.19M to 5.49M (1.09% CAGR).</p>
+<p class="subtitle">Over the past 50 years (1975-2025), the UK's population rose 24% from 56.2M to 69.5M (0.43% CAGR), whereas the Republic of Ireland grew 72% from 3.19M to 5.49M (1.09% CAGR).<br><b>Click the image to toggle years.</b></p>
 <div class="toggle-wrap">
 <button class="yr-btn active" data-year="2025" id="btn2025">2025</button>
-<button class="yr-btn"        data-year="1975" id="btn1975">1975</button>
+<button class="yr-btn" data-year="1975" id="btn1975">1975</button>
 </div>
 </div>
 </div>
-
 <div class="img-wrap">
 <img id="mapImg" src="https://i.plumplot.co.uk/posts/united-kingdom-and-ireland-population-density-2025.webp" alt="United Kingdom and Ireland Population Density Map in 2025" class="map-img" width="3840" height="4491">
 <span class="yr-badge" id="badge">2025</span>
 </div>
-
 <div class="wrap">
 <div class="next-links">
 <h3>Next</h3>
@@ -59,7 +57,6 @@ footer{padding:32px 0 20px}
 </ul>
 </div>
 </div>
-
 <div class="col-lg-12 space"><a href="https://www.plumplot.co.uk"><svg class="svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 450 610 570" version="1.1"><g><path d="m391.75 455.4-22.168 0.12248 2.1433 68.709-72.2-48.317 1.286 38.274 231.54 153.58c11.73 0.16794 23.695-2.4043 16.595-25.046l-154.55-103.35-2.64-83.96zm-99.02 20.09-248.44 167.73c-6.8887 20.736 6.6898 25.356 16.595 25.046l232.46-153.65-0.61-39.13zm-166.63 160.5-27.925 21.372v274.77h27.006l0.91857-296.15zm340.97 0 0.91856 296.15h27.006v-274.77l-27.924-21.372zm-384.26 301.29c-3.7781 4.6541-5.5741 9.3082 0 13.962h427.56c3.1488-3.6045 6.0734-7.2837 0-13.962h-427.56z"/><text x="150" y="800" font-family="Verdana" font-size="99">Home</text></g><metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/><dc:publisher><cc:Agent rdf:about="http://openclipart.org/"></cc:Agent></dc:publisher><dc:source>https://openclipart.org/detail/170282/eco-green-house-icon-by-cybergedeon</dc:source><dc:creator><cc:Agent><dc:title>dominiquechappard</dc:title></cc:Agent></dc:creator><dc:subject></dc:subject></cc:Work><cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/"><cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/><cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/><cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/></cc:License></rdf:RDF></metadata></svg>
 </a></div>
 <script>
@@ -75,19 +72,15 @@ var alts  = {
 '2025': 'United Kingdom and Ireland Population Density Map in 2025',
 '1975': 'United Kingdom and Ireland Population Density Map in 1975'
 };
-
 function switchYear(year) {
 img.src = srcs[year];
 img.alt = alts[year];
 badge.textContent = year;
 btns.forEach(function(b){ b.classList.toggle('active', b.dataset.year === year); });
 }
-
 btns.forEach(function(b){
 b.addEventListener('click', function(){ switchYear(b.dataset.year); });
 });
-
-// also keep click-on-image toggling
 img.style.cursor = 'pointer';
 img.addEventListener('click', function(){
 var active = document.querySelector('.yr-btn.active');
